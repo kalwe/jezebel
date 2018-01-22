@@ -1,0 +1,8 @@
+#!/bin/sh
+
+#
+# Check if have params and call bootstrap function in start.sh
+. ../scripts/start.sh
+
+
+start

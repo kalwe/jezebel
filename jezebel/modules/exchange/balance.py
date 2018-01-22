@@ -5,7 +5,7 @@ class Balance:
         self.available = available
         self.pending = pending
 
-    def total(self):
+    def amount_total(self):
         return self.available + self.pending
 
     # should make api request

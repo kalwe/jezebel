@@ -13,7 +13,7 @@ class RiskManager(object):
     """Leave you alive to fight anoter day,
     save 70% of total capital, not allow invest if pending value is above this limit"""
     def have_god_limit(self):
-        if self._balance.pending > (self._balance.amount_total * (70/100))
+        if self._balance.pending > (self._balance.amount_total * (SAFETY/100))
             return True
         else:
             return False
@@ -21,7 +21,7 @@ class RiskManager(object):
     """Return 1/3 of your capital to security invest"""
     def capital_to_invest(self):
         if self.have_god_limit():
-            return balance.amount_total/3
+            return balance.amount_total/SAFETY
 
     """Return safe capital to invest in altcoins"""
     def capital_to_altcoin(self)

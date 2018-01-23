@@ -1,3 +1,4 @@
+# maybe this code needed to be change to one directory above
 import os, sys
 
 testdir = os.path.dirname(__file__)

@@ -13,8 +13,6 @@ class RiskManager(object):
     """Leave you alive to fight anoter day,
     save 70% of total capital, not allow invest if pending value is above this limit"""
     def have_god_limit(self):
-    #     print(str(self._balance._pending))
-    #     print(str(self._balance._available))
         if self._balance._pending < (self._balance.total_amount() * (self.SAFETY)):
             return True
         else:

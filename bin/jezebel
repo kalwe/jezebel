@@ -2,7 +2,20 @@
 
 #
 # Check if have params and call bootstrap function in start.sh
-. ../scripts/start.sh
+if [ -d ../scripts/ ]
+then
+  . ../scripts/bootstrap.sh
+  . ../scripts/banner.sh
+else 
+  echo "error when try imports scripts..."
+fi
 
-
-start
+if [ ! -z $@ ]; then
+  startj
+else
+  echo -e ""
+  jezebel_banner
+  echo -e "\n  Pass some parameters to start \033[95mJezebel\033[0m."
+  echo -e "  Or use: \"jezebel --help\"\n"
+  exit 1
+fi

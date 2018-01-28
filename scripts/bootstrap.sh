@@ -1,16 +1,15 @@
-#!/bin/sh
-
-#
 # Start traderbot
 # Call __init__.py if params is ok
 
 VER="0.0.1@ALFA"
 INIT_PATH="../jezebel/__init__.py"
 
-function echo_usage {
+function usage {
   echo -e "Jezebel $VER"
   echo -e "\tUsage example: jezebel [exchange] [currencie] [capital-to-operate]"
-  echo -e ""
+  echo -e "  -e/--exchange: bitfinex, bittrex"
+  echo -e "  -c/--currencie: btc, ltc, xrp..."
+  echo -e "  -v/--capital: 100, 150, 250...[n] (optional)"
 }
 
 function bootstrap {
@@ -18,14 +17,16 @@ function bootstrap {
 }
 
 function check_params {
-  if [ $@ != 0 ]; then
-    bootstrap
+  if [ "$1" == "--help" ]; then
+    usage
   else
-    echo_usage $VER
+    # bootstrap
+    echo "Jezebel is working to you get rich, bitch!!!"
+    echo "In exchange $1" 
   fi
 }
 
-function start {
+function startj {
   check_params $@ 
 }
 
